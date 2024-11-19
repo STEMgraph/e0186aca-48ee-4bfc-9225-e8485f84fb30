@@ -1,0 +1,67 @@
+\begin{challenge}
+    \chatitle{Object-Oriented Standard-Containers in C++}
+    \begin{chadescription}
+    The usage of the object oriented programming paradigm is baked into the C++ standard library.
+    One of this concept are the C++ standard container-classes.
+    The idea behind these classes are the same as the ideas behind every other object oriented design: to bind structured data and beahvior together.
+    While the computer itself only knows plain RAM adresses, programming languages implement concepts for us to add specific rules to certain ranges of our memory.
+    With the instantiation of a data-object identifier - \texttt{int a\{\};} - the compiler knows that it should reserve a certain amount of memory, and remeber its address for later use in a way, that the programmer can now refer to this memory by its identifing name. 
+    The compiler also knows, which assembly operation to perform, if we use this identifier in a mathematical expression, or how to convert it into a string if we want to print it to the terminal.
+    All of these informations are part of the type-system.
+    We are refering to the types \texttt{int}, \texttt{char}, \texttt{float} and \texttt{double} as primitive types, or plain-old data-types.
+    Working with structures enabled us to pack several primitive types into one data-object and give our compiler the ability to reserve a certain memory-layout for identifiers of structured types.
+    In addition to that, classes helped us to tell our compiler, that there are certain types of functions, that we want to be able to call just with objects of that exact class.\\
+    Conatiner classes are exactely that: a method to tell our compiler certain rules about the memory layout of a data-object, while providing the programmer with additional functions, that are only meant to be used on objects of the exact container-class.
+    A container class is meant to store a collection of other items. 
+    You could think of container-classes as a generalization of arrays, graphs, lists, trees and other collection-structures.
+    The C++ standard library brings a set of container-classes to our disposal, that we can mix and match with each other and with plain-old data-types.
+    Let's see some examples to make this more clear.
+    
+    \end{chadescription}
+
+    \begin{task}
+    Clone the following repository and build it by using the \texttt{make} command: \href{https://github.com/STEMgraph/98500992-3b1e-4fc2-ae52-4ef2361553a6}{Basic Array Example}.
+        \begin{questions}
+            \item How is the decalration and definition different to an array in C?
+            \item hat advantages does the \texttt{.at()} method provide over direct indexing with \texttt{[]}?
+            \item What does the \texttt{fill()} method do, and how would you achieve the same in C?
+            \item Why do we use a range-based for loop (\texttt{for (const auto& element : myArray)}) here instead of a traditional \texttt{for} loop?
+        \end{questions}
+    \end{task}
+
+
+    \begin{task}
+    Clone the following repository and build it by using the \texttt{make} command: \href{https://github.com/STEMgraph/ace16f79-8c02-4c81-8b32-ba60083ba75f}{Basic List Example}.
+    The wonderful thing about a list is that it is an ordered collection of elements, that can dynamically grow and shrink.
+    Furthermore, it already bringst class methods to add or remove elements from the list in an efficient way.
+        \begin{questions}
+            \item What is the advantage of using \texttt{std::list} over manually implementing a linked list in C?
+            \item How do \texttt{push_front()} and \texttt{push_back()} simplify adding elements compared to manually updating pointers in C?
+            \item How does using iterators (\texttt{std::advance()}) compare to manually traversing a linked list in C?
+            \item What happens when you use \texttt{myList.erase(it)}? How would you achieve the same in C?
+        \end{questions}
+    \end{task}
+
+    \begin{task}
+    Clone the following repository and build it by using the \texttt{make} command: \href{https://github.com/STEMgraph/c2857aed-9b3e-4790-86d0-1a0ccb701b05}{Basic Vector Example}.
+    A vector in C++ is a dynamic array that can resize itself automatically, managing memory allocation and deallocation behind the scenes. 
+    It provides powerful methods like \texttt{push_back}, \texttt{pop_back}, and \texttt{insert} to simplify adding and removing elements, making it more flexible than a standard array. 
+    Additionally, vectors offer built-in safety features like bounds checking with \texttt{.at()} and are compatible with modern C++ algorithms through iterators.
+        \begin{questions}
+            \item What advantages does \texttt{std::vector} offer compared to a traditional C-style array?
+            \item How does \texttt{myVector.push_back(6)} differ from adding an element to an array in C?
+            \item What would happen if you try to access an out-of-bounds index using \texttt{myVector[10]}? How does this differ from \texttt{myVector.at(10)}?
+            \item What are the advantages of using \texttt{myVector.size()} over manually maintaining a size variable for an array in C?
+        \end{questions}
+    \end{task}
+    \begin{advise}
+        After completing these exercises, it's important to reflect on the strengths and trade-offs of each container. 
+        Arrays are great for cases where you know the size in advance and need fast, constant-time access to elements, but they lack flexibility and safety features. 
+        Vectors, on the other hand, are ideal when you need a resizable container and want to avoid the manual memory management required with arrays, offering both power and ease of use. 
+        Lists excel in scenarios where frequent insertions and deletions in the middle of the container are necessary, as their linked structure makes these operations efficient, though they come with a performance cost for random access.\\
+
+        Beyond \texttt{std::vector}, \texttt{std::list} and \texttt{std::array}, C++ provides a wide variety of other containers like \texttt{std::deque}, \texttt{std::set}, \texttt{std::map}, and \texttt{std::unordered_map}, each designed for specific use cases. 
+        To expand your knowledge, visit a reliable reference website, such as \href{cppreference.com}{cppreference.com}, and explore the full range of STL container classes. Understanding the unique characteristics of these containers will help you choose the most appropriate one for your programming challenges.
+    \end{advise}
+\end{challenge}
+    
