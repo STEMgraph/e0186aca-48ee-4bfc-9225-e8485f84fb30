@@ -1,1 +1,0 @@
-At the end of this challenge, the scholar will be able to explain the concept of object-oriented container-classes in C++.
